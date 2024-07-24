@@ -1,13 +1,15 @@
 import React, { ReactNode } from 'react';
-import { Animated, StyleSheet, Text, StyleProp, TextStyle, TextProps } from 'react-native';
-import { typography, colors } from 'res';
-import ReAnimated from 'react-native-reanimated';
+import { StyleSheet, Text, StyleProp, TextStyle, TextProps } from 'react-native';
+import { typography } from 'res';
+import { IColors } from 'res/colors';
+import { ITypography } from 'res/typography';
+import { useCommonContext } from 'src/store';
 
-interface IText extends TextProps {
-  children: ReactNode;
-  style: TextStyle | StyleProp<TextStyle>[];
-  color?: string;
-  size?: string;
+export interface IText extends TextProps {
+  children?: ReactNode;
+  style?: TextStyle | StyleProp<TextStyle>[];
+  color?: IColors;
+  size?: ITypography;
   distance?: number;
   animated?: boolean;
   underline?: boolean;
@@ -15,12 +17,14 @@ interface IText extends TextProps {
   reAnimated?: boolean;
   weight?: TextStyle['fontWeight'];
   onPress?: TextProps['onPress'];
+  textTransform?: TextStyle['textTransform'];
+  textAlign?: TextStyle['textAlign'];
 }
 
 const TextComponent = ({
   children,
   style,
-  color = 'background',
+  color = 'white',
   size = 't3',
   weight,
   distance,
@@ -29,33 +33,41 @@ const TextComponent = ({
   flex = undefined,
   reAnimated,
   onPress,
+  textTransform,
+  textAlign,
   ...props
 }: IText) => {
-  const Component = reAnimated ? ReAnimated.Text : animated ? Animated.Text : Text;
   const textDecorationLine = underline ? 'underline' : 'none';
+  const { currentColors } = useCommonContext();
 
   const componentStyle: StyleProp<TextStyle>[] = [
     styles.style,
     typography?.[size],
     {
-      color: colors?.[color],
+      color: currentColors?.[color],
       marginTop: distance,
       textDecorationLine,
-      fontWeight: weight,
+      fontWeight: weight || typography?.[size]?.fontWeight,
       flex,
+      textTransform,
+      textAlign,
     },
     style,
   ];
 
+  if (!children) {
+    return null;
+  }
+
   return (
-    <Component
+    <Text
       style={componentStyle}
       allowFontScaling={false}
       maxFontSizeMultiplier={1}
       onPress={onPress}
       {...props}>
       {children}
-    </Component>
+    </Text>
   );
 };
 

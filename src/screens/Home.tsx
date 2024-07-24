@@ -24,17 +24,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import BootSplash from 'react-native-bootsplash';
-import DeviceInfo from 'react-native-device-info';
-import Config from 'react-native-config';
-import { LogLevel, OneSignal } from 'react-native-onesignal';
-import branch from 'react-native-branch';
-import app from '@react-native-firebase/app';
-import { NavigationContainer, NavigationProp } from '@react-navigation/native';
-import { createNativeStackNavigator, NativeStackScreenProps } from '@react-navigation/native-stack';
-import { navigate, navigation } from 'src/utils/navigation';
 import { Text } from 'src/components';
-
-const { WHITE_LABEL_NAME, BUNDLE_IDENTIFIER, DEEPLINK_SCHEME_ALTERNATE } = Config;
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -68,61 +58,13 @@ function Section({ children, title }: SectionProps): React.JSX.Element {
 }
 
 //
-const Home = () => {
-  useEffect(() => {
-    OneSignal.initialize(
-      Config?.UNIQUE_WHITELABEL_ID === 'housify'
-        ? 'e08fcbb5-0099-4566-b0b0-360827b60932'
-        : '05a50603-9f00-4108-9991-9b36ff119453'
-    );
-    OneSignal.Notifications.requestPermission(true);
-
-    OneSignal.Notifications.addEventListener('foregroundWillDisplay', (event) => {
-      console.log('OneSignal: notification clicked:', event);
-    });
-
-    setTimeout(() => {
-      BootSplash.hide();
-    }, 2000);
-
-    branch.subscribe((event) => {
-      console.log('event', event);
-    });
-
-    branch.getFirstReferringParams().then((r) => console.log('xd', r));
-  }, []);
-
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+function Home() {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView contentInsetAdjustmentBehavior="automatic" style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Bundle ID">
-            <Text onPress={() => navigate('Login')} style={styles.highlight}>
-              {BUNDLE_IDENTIFIER}
-            </Text>
-          </Section>
-          <Section title="Display Name">
-            <Text style={styles.highlight}>{WHITE_LABEL_NAME}</Text>
-          </Section>
-        </View>
-      </ScrollView>
+    <SafeAreaView>
+      <Text>XD</Text>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   sectionContainer: {

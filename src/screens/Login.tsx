@@ -24,16 +24,6 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import BootSplash from 'react-native-bootsplash';
-import DeviceInfo from 'react-native-device-info';
-import Config from 'react-native-config';
-import { LogLevel, OneSignal } from 'react-native-onesignal';
-import branch from 'react-native-branch';
-import app from '@react-native-firebase/app';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-const { WHITE_LABEL_NAME, BUNDLE_IDENTIFIER, DEEPLINK_SCHEME_ALTERNATE } = Config;
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -68,30 +58,7 @@ function Section({ children, title }: SectionProps): React.JSX.Element {
 console.warn('FirebaseId:', app.app().options.projectId);
 
 //
-function Login(): React.JSX.Element {
-  useEffect(() => {
-    OneSignal.initialize(
-      Config?.UNIQUE_WHITELABEL_ID === 'housify'
-        ? 'e08fcbb5-0099-4566-b0b0-360827b60932'
-        : '05a50603-9f00-4108-9991-9b36ff119453'
-    );
-    OneSignal.Notifications.requestPermission(true);
-
-    OneSignal.Notifications.addEventListener('foregroundWillDisplay', (event) => {
-      console.log('OneSignal: notification clicked:', event);
-    });
-
-    setTimeout(() => {
-      BootSplash.hide();
-    }, 2000);
-
-    branch.subscribe((event) => {
-      console.log('event', event);
-    });
-
-    branch.getFirstReferringParams().then((r) => console.log('xd', r));
-  }, []);
-
+function Login() {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -110,12 +77,8 @@ function Login(): React.JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Bundle ID">
-            <Text style={styles.highlight}>{BUNDLE_IDENTIFIER}</Text>
-          </Section>
-          <Section title="Display Name">
-            <Text style={styles.highlight}>{WHITE_LABEL_NAME}</Text>
-          </Section>
+          <Section title="Bundle ID"></Section>
+          <Section title="Display Name"></Section>
         </View>
       </ScrollView>
     </SafeAreaView>

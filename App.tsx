@@ -26,7 +26,6 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import BootSplash from 'react-native-bootsplash';
 import DeviceInfo from 'react-native-device-info';
-import Config from 'react-native-config';
 import { LogLevel, OneSignal } from 'react-native-onesignal';
 import branch from 'react-native-branch';
 import app from '@react-native-firebase/app';
