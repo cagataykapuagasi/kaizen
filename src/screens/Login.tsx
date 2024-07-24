@@ -55,8 +55,6 @@ function Section({ children, title }: SectionProps): React.JSX.Element {
   );
 }
 
-console.warn('FirebaseId:', app.app().options.projectId);
-
 //
 function Login() {
   const isDarkMode = useColorScheme() === 'dark';

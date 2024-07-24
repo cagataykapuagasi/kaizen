@@ -28,7 +28,6 @@ import BootSplash from 'react-native-bootsplash';
 import DeviceInfo from 'react-native-device-info';
 import { LogLevel, OneSignal } from 'react-native-onesignal';
 import branch from 'react-native-branch';
-import app from '@react-native-firebase/app';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Router } from './src/screens';

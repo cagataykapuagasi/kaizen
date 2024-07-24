@@ -11,6 +11,7 @@ import { setNavigation } from 'src/utils/navigation';
 import { INavigationContainer, IRootStack } from 'src/types/navigation';
 import { languages } from 'res';
 import BootSplash from 'react-native-bootsplash';
+import { StoreProvider } from 'src/store';
 
 const Stack = createNativeStackNavigator<IRootStack>();
 
@@ -26,9 +27,11 @@ export const Router = () => {
   };
 
   return (
-    <NavigationContainer ref={handleRef} onReady={onReady}>
-      <MainNavigator />
-    </NavigationContainer>
+    <StoreProvider>
+      <NavigationContainer ref={handleRef} onReady={onReady}>
+        <MainNavigator />
+      </NavigationContainer>
+    </StoreProvider>
   );
 };
 
