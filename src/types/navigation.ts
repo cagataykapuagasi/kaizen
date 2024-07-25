@@ -6,5 +6,10 @@ export interface INavigationContainer
 export type IRootStack = {
   Home: undefined;
   Login: undefined;
-  // Feed: { sort: 'latest' | 'top' } | undefined;
+  Main: undefined;
+};
+
+export type ITabStack = {
+  Home: undefined;
+  Wallet: undefined;
 };

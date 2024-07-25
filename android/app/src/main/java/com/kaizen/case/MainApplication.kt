@@ -1,4 +1,4 @@
-package com.starterkit
+package com.kaizen.case
 
 import android.app.Application
 import com.facebook.react.PackageList

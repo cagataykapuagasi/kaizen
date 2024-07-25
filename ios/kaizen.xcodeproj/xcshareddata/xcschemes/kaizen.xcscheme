@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "starterKit.app"
-               BlueprintName = "starterKit"
-               ReferencedContainer = "container:starterKit.xcodeproj">
+               BuildableName = "kaizen.app"
+               BlueprintName = "kaizen"
+               ReferencedContainer = "container:kaizen.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "starterKitTests.xctest"
-               BlueprintName = "starterKitTests"
-               ReferencedContainer = "container:starterKit.xcodeproj">
+               BuildableName = "kaizenTests.xctest"
+               BlueprintName = "kaizenTests"
+               ReferencedContainer = "container:kaizen.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "starterKit.app"
-            BlueprintName = "starterKit"
-            ReferencedContainer = "container:starterKit.xcodeproj">
+            BuildableName = "kaizen.app"
+            BlueprintName = "kaizen"
+            ReferencedContainer = "container:kaizen.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "starterKit.app"
-            BlueprintName = "starterKit"
-            ReferencedContainer = "container:starterKit.xcodeproj">
+            BuildableName = "kaizen.app"
+            BlueprintName = "kaizen"
+            ReferencedContainer = "container:kaizen.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
