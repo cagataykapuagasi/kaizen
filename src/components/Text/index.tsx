@@ -11,10 +11,8 @@ export interface IText extends TextProps {
   color?: IColors;
   size?: ITypography;
   distance?: number;
-  animated?: boolean;
   underline?: boolean;
   flex?: number;
-  reAnimated?: boolean;
   weight?: TextStyle['fontWeight'];
   onPress?: TextProps['onPress'];
   textTransform?: TextStyle['textTransform'];
@@ -24,14 +22,12 @@ export interface IText extends TextProps {
 const TextComponent = ({
   children,
   style,
-  color = 'white',
-  size = 't3',
+  color = 'primary',
+  size = 'd2',
   weight,
   distance,
-  animated = false,
   underline = false,
   flex = undefined,
-  reAnimated,
   onPress,
   textTransform,
   textAlign,
@@ -75,6 +71,6 @@ export default TextComponent;
 
 const styles = StyleSheet.create({
   style: {
-    fontFamily: 'Brown',
+    fontFamily: 'Helvetica',
   },
 });

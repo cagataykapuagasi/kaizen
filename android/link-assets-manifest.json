@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "res/fonts/Helvetica.ttf",
+      "sha1": "53cb59bdb997dd39dc70b95d50133583e66ebdcb"
+    },
+    {
+      "path": "res/fonts/icomoon.ttf",
+      "sha1": "44c2bdd5775a5a203bb1ad6b9234b352177aad7f"
+    },
+    {
+      "path": "res/fonts/selection.json",
+      "sha1": "bed47dda66489631a6d8fbc57c45c89c9383a300"
+    }
+  ]
+}

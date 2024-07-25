@@ -5,4 +5,5 @@ export { default as languages } from './languages';
 export { default as images } from './images';
 export { default as typography } from './typography';
 export { default as colors } from './colors';
+export * from './colors';
 export { width, height };

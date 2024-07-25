@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* kaizenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* kaizenTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-kaizen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-kaizen.a */; };
+		0CA59EEA799141158BB7D2E6 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5ABBD2CA30B40C0A3CDADA5 /* icomoon.ttf */; };
 		1227C01084CE40A7B8DCF580 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4830A27CACC4476989041ED /* BootSplash.storyboard */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3EE0E4E0590E4F4C872FDDCB /* selection.json in Resources */ = {isa = PBXBuildFile; fileRef = F4D3881B6DD54679B7F7F719 /* selection.json */; };
 		61E0C904C30DE39135FD3B82 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 00A5F8E2E1A72A87353224DA /* PrivacyInfo.xcprivacy */; };
+		66AB461199524404A9F81B90 /* Helvetica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D65DCC537A24093BB67E677 /* Helvetica.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-kaizen-kaizenTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-kaizen-kaizenTests.a */; };
 		E25F841300F640ABAEDFC7C2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 132E03ACA7A640F08834EBE8 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
@@ -43,12 +46,15 @@
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = kaizen/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-kaizen-kaizenTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kaizen-kaizenTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-kaizen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaizen.debug.xcconfig"; path = "Target Support Files/Pods-kaizen/Pods-kaizen.debug.xcconfig"; sourceTree = "<group>"; };
+		4D65DCC537A24093BB67E677 /* Helvetica.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Helvetica.ttf; path = ../res/fonts/Helvetica.ttf; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-kaizen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaizen.release.xcconfig"; path = "Target Support Files/Pods-kaizen/Pods-kaizen.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-kaizen-kaizenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaizen-kaizenTests.debug.xcconfig"; path = "Target Support Files/Pods-kaizen-kaizenTests/Pods-kaizen-kaizenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-kaizen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kaizen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-kaizen-kaizenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaizen-kaizenTests.release.xcconfig"; path = "Target Support Files/Pods-kaizen-kaizenTests/Pods-kaizen-kaizenTests.release.xcconfig"; sourceTree = "<group>"; };
 		A4830A27CACC4476989041ED /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = kaizen/BootSplash.storyboard; sourceTree = "<group>"; };
+		B5ABBD2CA30B40C0A3CDADA5 /* icomoon.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = icomoon.ttf; path = ../res/fonts/icomoon.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F4D3881B6DD54679B7F7F719 /* selection.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = selection.json; path = ../res/fonts/selection.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				F6A2BEFCCFE7487491A76874 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -154,6 +161,17 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-kaizen-kaizenTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F6A2BEFCCFE7487491A76874 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4D65DCC537A24093BB67E677 /* Helvetica.ttf */,
+				B5ABBD2CA30B40C0A3CDADA5 /* icomoon.ttf */,
+				F4D3881B6DD54679B7F7F719 /* selection.json */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +271,9 @@
 				61E0C904C30DE39135FD3B82 /* PrivacyInfo.xcprivacy in Resources */,
 				1227C01084CE40A7B8DCF580 /* BootSplash.storyboard in Resources */,
 				E25F841300F640ABAEDFC7C2 /* Colors.xcassets in Resources */,
+				66AB461199524404A9F81B90 /* Helvetica.ttf in Resources */,
+				0CA59EEA799141158BB7D2E6 /* icomoon.ttf in Resources */,
+				3EE0E4E0590E4F4C872FDDCB /* selection.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +497,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WV7VZH56BF;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = kaizen/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = kaizen;
@@ -504,6 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WV7VZH56BF;
 				INFOPLIST_FILE = kaizen/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = kaizen;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -596,7 +619,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -668,7 +694,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

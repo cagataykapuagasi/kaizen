@@ -10,11 +10,11 @@ const i18n = new I18n(translations);
 
 const locale = RNLocalize.findBestLanguageTag(Object.keys(i18n.translations)) || {
   isRTL: false,
-  languageTag: 'en',
+  languageTag: 'tr',
 };
 I18nManager.forceRTL(locale.isRTL);
 i18n.locale = locale.languageTag;
-i18n.defaultLocale = 'en';
+i18n.defaultLocale = 'tr';
 
 dayjs.locale(locale.languageTag);
 

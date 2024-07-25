@@ -11,7 +11,8 @@ const typography = {
     fontSize: 30,
   },
   t1: {
-    fontSize: 24,
+    fontSize: 26,
+    fontWeight: '700',
   },
   t2: {
     fontSize: 20,
@@ -30,12 +31,14 @@ const typography = {
   },
   d1: {
     fontSize: 14,
+    fontWeight: '700',
   },
   d2: {
-    fontSize: 13,
+    fontSize: 12,
   },
   d3: {
-    fontSize: 11,
+    fontSize: 10,
+    fontWeight: '700',
   },
 } as const;
 
