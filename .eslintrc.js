@@ -9,14 +9,8 @@ module.exports = {
     'react/no-direct-mutation-state': 2,
     'react/no-typos': 2,
     'react/prefer-stateless-function': 'off',
-    'react/jsx-filename-extension': [
-      1,
-      {extensions: ['.js', 'jsx', 'ts', 'tsx']},
-    ],
-    'no-use-before-define': [
-      'error',
-      {functions: true, classes: true, variables: false},
-    ],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', 'jsx', 'ts', 'tsx'] }],
+    'no-use-before-define': ['error', { functions: true, classes: true, variables: false }],
     'comma-dangle': [
       2,
       {
