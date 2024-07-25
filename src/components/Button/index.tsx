@@ -12,7 +12,7 @@ export interface IButton extends TouchableOpacityProps {
 
 const Button = ({ viewProps, textProps, text, children, ...props }: IButton) => {
   return (
-    <TouchableOpacity activeOpacity={0.7} {...props}>
+    <TouchableOpacity activeOpacity={0.8} {...props}>
       <View
         justifyCenter
         alignCenter

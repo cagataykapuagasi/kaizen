@@ -8,9 +8,6 @@ import View from '../View';
 import { IColors } from 'res/colors';
 import { useCommonContext } from 'src/store';
 
-const logList = [...icoMoonConfig.icons.map((i) => i.properties.name)] as const;
-console.log('icon list', logList);
-
 const iconList = ['back', 'explore', 'profile', 'search', 'star', 'Shape'] as const;
 
 const _Icon = createIconSetFromIcoMoon(icoMoonConfig, 'Icomoon', 'icomoon.ttf');

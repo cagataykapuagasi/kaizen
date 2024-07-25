@@ -8,5 +8,6 @@ export default {
     moreMore: 'Daha Daha',
     lastNumberDay: 'son %{number} gün',
     joinNow: 'Hemen Katıl',
+    login: 'Giriş Yap',
   },
 };

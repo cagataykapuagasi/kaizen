@@ -35,21 +35,17 @@ export const useRequest = <T>(
 
   const fetch = useCallback(
     async ({ callback, ...customConfig }: IFetch = {}) => {
-      console.log('fetched', apiMethod);
-
       try {
         setLoading(true);
         const res = (await Api[apiMethod](
           typeof config === 'object' ? { ...config, ...customConfig } : config
         )) as AxiosResponse;
-        console.log('res', res);
         setData(res.data);
 
         if (callback) {
           await callback();
         }
       } catch (err) {
-        console.log(err);
         setError(err);
         showToastError();
       } finally {

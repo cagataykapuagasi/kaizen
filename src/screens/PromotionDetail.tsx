@@ -1,26 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React, { useEffect } from 'react';
-import type { PropsWithChildren } from 'react';
-import { ScrollView, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import BootSplash from 'react-native-bootsplash';
-import { Button, Container, Icon, StatusBar, Text, View } from 'src/components';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React from 'react';
+import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { Button, Icon, StatusBar, Text, View } from 'src/components';
 import Image from 'src/components/Image';
-import { PromotionModule } from 'src/modules';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import { IParamList } from 'src/types/navigation';
 import { useRequest } from 'src/utils/useRequest';
@@ -29,6 +10,7 @@ import { calculateDateDiff } from 'src/utils/date';
 import { colors, height, languages, width } from 'res';
 import { navigation } from 'src/utils/navigation';
 import { extractTextFromHtml } from 'src/utils/data';
+import { initialWindowMetrics } from 'react-native-safe-area-context';
 
 const { joinNow } = languages.get('default');
 
@@ -36,8 +18,6 @@ function PromotionDetail() {
   const { params } = useRoute<RouteProp<IParamList, 'PromotionDetail'>>();
   const { data, loading } = useRequest<IPromotionDetail>('getPromotionDetail', params);
   const { dayDiff } = calculateDateDiff(new Date(), data?.RemainingText);
-
-  console.log('Detail', data);
 
   return (
     <>
@@ -50,7 +30,7 @@ function PromotionDetail() {
         <View style={styles.headerContainer}>
           <TouchableOpacity
             onPress={navigation.goBack}
-            activeOpacity={0.7}
+            activeOpacity={0.8}
             style={styles.back}
             hitSlop={20}>
             <Icon height={40} width={40} backgroundColor="dark" container size={18} name="back" />
@@ -143,7 +123,7 @@ const styles = StyleSheet.create({
   },
   back: {
     position: 'absolute',
-    top: 50,
+    top: Math.max(initialWindowMetrics?.insets.top || 0, 50),
     left: 15,
     zIndex: 1,
     elevation: 1,

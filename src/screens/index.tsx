@@ -30,13 +30,13 @@ function TabNavigator() {
       <Tab.Screen
         name="Home"
         component={Home}
-        options={{ icon: 'explore', name: tabBar?.explore }}
+        options={{ icon: 'explore', name: tabBar?.explore } as any}
       />
-      <Tab.Screen name="Middle" component={Home} options={{ isMiddle: true }} />
+      <Tab.Screen name="Middle" component={Home} options={{ isMiddle: true } as any} />
       <Tab.Screen
         name="Wallet"
         component={Wallet}
-        options={{ name: tabBar?.wallet, icon: 'star' }}
+        options={{ name: tabBar?.wallet, icon: 'star' } as any}
       />
     </Tab.Navigator>
   );

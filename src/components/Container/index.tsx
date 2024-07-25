@@ -1,9 +1,17 @@
 import React from 'react';
 import { View } from '..';
 import { tabBarHeight } from 'src/utils/config';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, ViewStyle } from 'react-native';
+import { IColors } from 'res/colors';
 
-function Container({ children, style, containerStyle, backgroundColor }) {
+interface IContainer {
+  children?: React.ReactNode;
+  style?: ViewStyle;
+  containerStyle?: ViewStyle;
+  backgroundColor?: IColors;
+}
+
+function Container({ children, style, containerStyle, backgroundColor }: IContainer) {
   return (
     <View
       flex={1}

@@ -1,29 +1,7 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { StyleSheet, Animated, Pressable, Easing, View, TouchableOpacity } from 'react-native';
-import { colors, languages } from 'res';
+import React from 'react';
+import { StyleSheet, Pressable, View, TouchableOpacity } from 'react-native';
 import { Icon, Text } from '..';
-import { navigation } from '../../utils/navigation';
-import { Api } from '../../api';
-import { Context } from '../../store';
-
-const { new: newText } = languages.t('default');
-
-const Tab = ({ isFocused, onPress, onLongPress, index, route, options, state }) => {
-  if (options.isMiddle) {
-    return <MiddleButton />;
-  }
-
-  return (
-    <Pressable style={styles.container} onLongPress={onLongPress} onPress={onPress}>
-      <Icon color={isFocused ? 'black' : 'tabIconInactive'} size={24} name={options?.icon} />
-
-      <Text color={isFocused ? 'black' : 'tabIconInactive'} size="d3" textTransform="uppercase">
-        {options?.name}
-      </Text>
-    </Pressable>
-  );
-};
-export default Tab;
+import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 
 function MiddleButton() {
   return (
@@ -111,6 +89,30 @@ function MiddleButton() {
     </TouchableOpacity>
   );
 }
+
+interface ITab {
+  isFocused: boolean;
+  onPress: () => void;
+  onLongPress: () => void;
+  options: BottomTabNavigationOptions & any;
+}
+
+const Tab = ({ isFocused, onPress, onLongPress, options }: ITab) => {
+  if (options.isMiddle) {
+    return <MiddleButton />;
+  }
+
+  return (
+    <Pressable style={styles.container} onLongPress={onLongPress} onPress={onPress}>
+      <Icon color={isFocused ? 'black' : 'tabIconInactive'} size={24} name={options?.icon} />
+
+      <Text color={isFocused ? 'black' : 'tabIconInactive'} size="d3" textTransform="uppercase">
+        {options?.name}
+      </Text>
+    </Pressable>
+  );
+};
+export default Tab;
 
 const styles = StyleSheet.create({
   container: {

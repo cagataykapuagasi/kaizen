@@ -20,7 +20,7 @@ function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
           });
 
           if (!isFocused && !event.defaultPrevented) {
-            navigation.navigate({ name: route.name });
+            navigation.navigate(route.name);
           }
         };
 
@@ -37,10 +37,7 @@ function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
             onLongPress={onLongPress}
             onPress={onPress}
             isFocused={isFocused}
-            route={route}
-            index={index}
             options={options}
-            state={state}
           />
         );
       })}
