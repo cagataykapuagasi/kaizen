@@ -67,8 +67,8 @@ function PromotionDetail() {
           )}
 
           <View gap={20} distance={15}>
-            {data?.PromotionDetailItemAreas.map((item) => (
-              <Text weight="400" size="d1" color="black">
+            {data?.PromotionDetailItemAreas.map((item, ind) => (
+              <Text key={ind} weight="400" size="d1" color="black">
                 {extractTextFromHtml(item?.Description)}
               </Text>
             ))}
