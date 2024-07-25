@@ -1,4 +1,4 @@
-package com.kaizen.case
+package com.kaizen.hadi
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

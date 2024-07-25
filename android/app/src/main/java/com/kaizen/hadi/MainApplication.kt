@@ -1,4 +1,4 @@
-package com.kaizen.case
+package com.kaizen.hadi
 
 import android.app.Application
 import com.facebook.react.PackageList

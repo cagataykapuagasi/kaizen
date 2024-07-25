@@ -11,6 +11,7 @@ import { colors, height, languages, width } from 'res';
 import { navigation } from 'src/utils/navigation';
 import { extractTextFromHtml } from 'src/utils/data';
 import { initialWindowMetrics } from 'react-native-safe-area-context';
+import { ActivityIndicator } from 'react-native';
 
 const { joinNow } = languages.get('default');
 
@@ -26,57 +27,62 @@ function PromotionDetail() {
         contentContainerStyle={styles.contentContainerStyle}
         style={styles.container}>
         <StatusBar barStyle={loading ? 'dark-content' : 'light-content'} />
+        <TouchableOpacity
+          onPress={navigation.goBack}
+          activeOpacity={0.8}
+          style={styles.back}
+          hitSlop={20}>
+          <Icon height={40} width={40} backgroundColor="dark" container size={18} name="back" />
+        </TouchableOpacity>
 
-        <View style={styles.headerContainer}>
-          <TouchableOpacity
-            onPress={navigation.goBack}
-            activeOpacity={0.8}
-            style={styles.back}
-            hitSlop={20}>
-            <Icon height={40} width={40} backgroundColor="dark" container size={18} name="back" />
-          </TouchableOpacity>
+        {loading ? (
+          <ActivityIndicator size="large" style={{ marginTop: height * 0.45 }} />
+        ) : (
+          <>
+            <View style={styles.headerContainer}>
+              {!!data?.ImageUrl && (
+                <Image style={styles.promotionImage} source={{ uri: data.ImageUrl }} />
+              )}
 
-          {!!data?.ImageUrl && (
-            <Image style={styles.promotionImage} source={{ uri: data.ImageUrl }} />
-          )}
+              {!!data?.BrandIconUrl && (
+                <View style={styles.brandItem}>
+                  <Image rounded height="100%" width="100%" source={{ uri: data.BrandIconUrl }} />
+                </View>
+              )}
 
-          {!!data?.BrandIconUrl && (
-            <View style={styles.brandItem}>
-              <Image rounded height="100%" width="100%" source={{ uri: data.BrandIconUrl }} />
+              {!!dayDiff && (
+                <View style={styles.dateContainer} backgroundColor="dark">
+                  <Text size="p3">{languages.t('default.lastNumberDay', { number: dayDiff })}</Text>
+                </View>
+              )}
             </View>
-          )}
 
-          {!!dayDiff && (
-            <View style={styles.dateContainer} backgroundColor="dark">
-              <Text size="p3">{languages.t('default.lastNumberDay', { number: dayDiff })}</Text>
+            <View distance={15} paddingHorizontal={15} flex={1}>
+              {!!data?.Title && (
+                <Text size="t1" color="black">
+                  {extractTextFromHtml(data.Title)}
+                </Text>
+              )}
+
+              {!!data?.Description && (
+                <Text distance={15} weight="400" size="d1" color="black">
+                  {extractTextFromHtml(data.Description)}
+                </Text>
+              )}
+
+              <View gap={20} distance={15}>
+                {data?.PromotionDetailItemAreas.map((item, ind) => (
+                  <Text key={ind} weight="400" size="d1" color="black">
+                    {extractTextFromHtml(item?.Description)}
+                  </Text>
+                ))}
+              </View>
             </View>
-          )}
-        </View>
-
-        <View distance={15} paddingHorizontal={15} flex={1}>
-          {!!data?.Title && (
-            <Text size="t1" color="black">
-              {extractTextFromHtml(data.Title)}
-            </Text>
-          )}
-
-          {!!data?.Description && (
-            <Text distance={15} weight="400" size="d1" color="black">
-              {extractTextFromHtml(data.Description)}
-            </Text>
-          )}
-
-          <View gap={20} distance={15}>
-            {data?.PromotionDetailItemAreas.map((item, ind) => (
-              <Text key={ind} weight="400" size="d1" color="black">
-                {extractTextFromHtml(item?.Description)}
-              </Text>
-            ))}
-          </View>
-        </View>
+          </>
+        )}
       </ScrollView>
 
-      <Button style={styles.button} viewProps={{ height: 56 }}>
+      <Button disabled={loading} style={styles.button} viewProps={{ height: 56 }}>
         {joinNow}
       </Button>
     </>
